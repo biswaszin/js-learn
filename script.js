@@ -1,17 +1,20 @@
-let userName = prompt("Who's there?", "");
+let i = 0;
 
-if (userName === "Admin") {
-  let pass = prompt("Password?", "");
+while (i < 3) {
+  alert(i);
+  i++;
+}
 
-  if (pass === "TheMaster") {
-    alert("Welcome!");
-  } else if (pass === "" || pass === null) {
-    alert("Canceled");
-  } else {
-    alert("Wrong password");
+for (let j = 2; j <= 10; j++) {
+  if (j % 2 == 0) {
+    alert(j);
   }
-} else if (userName === "" || userName === null) {
-  alert("Canceled");
-} else {
-  alert("I don't know you");
+}
+
+let k = 0;
+
+while (k < 3) {
+  alert(`number ${k}!`);
+
+  k++;
 }

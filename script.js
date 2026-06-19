@@ -1,20 +1,11 @@
-let userName = prompt("What's your name?");
-let phoneNumber = prompt("Enter your phone number: ");
-let userAvatar = prompt("Choose your avatar: ");
+const radius = 2;
+const color = "red";
+const apple = {
+  radius: radius,
+  color: color,
+};
 
-function createContact(
-  phoneNumber,
-  name = "Anonymous",
-  avatar = "default.jpg",
-) {
-  if (phoneNumber.length < 10) {
-    phoneNumber = "Invalid Phone Number";
-  }
+apple.numSeeds = 5;
+apple.color = "blue";
 
-  const filepath = "/public/pictures/" + avatar;
-  return `Contact Saved! Name: ${name}, Phone Number: ${phoneNumber}, Avatar: ${filepath}`;
-}
-
-let contactSaved = createContact(phoneNumber, userName, userAvatar);
-
-console.log(contactSaved);
+console.log(apple.color);

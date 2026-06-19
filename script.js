@@ -1,11 +1,20 @@
-let askEmail = prompt("What's your email address?");
-let name = prompt("Could you mention your name too?");
+let userName = prompt("What's your name?");
+let phoneNumber = prompt("Enter your phone number: ");
+let userAvatar = prompt("Choose your avatar: ");
 
-let userEmail = askEmail;
-let userName = name;
+function createContact(
+  phoneNumber,
+  name = "Anonymous",
+  avatar = "default.jpg",
+) {
+  if (phoneNumber.length < 10) {
+    phoneNumber = "Invalid Phone Number";
+  }
 
-function getGreeting(email, name = "there") {
-  console.log(`Hello ${name}, welcome! You've registered your email: ${email}`);
+  const filepath = "/public/pictures/" + avatar;
+  return `Contact Saved! Name: ${name}, Phone Number: ${phoneNumber}, Avatar: ${filepath}`;
 }
 
-getGreeting(userEmail, userName);
+let contactSaved = createContact(phoneNumber, userName, userAvatar);
+
+console.log(contactSaved);

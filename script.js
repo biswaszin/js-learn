@@ -1,11 +1,11 @@
-const radius = 2;
-const color = "red";
-const apple = {
-  radius: radius,
-  color: color,
-};
-
-apple.numSeeds = 5;
-apple.color = "blue";
-
-console.log(apple.color);
+for (let i = 1; i < 101; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else {
+    console.log(i);
+  }
+}

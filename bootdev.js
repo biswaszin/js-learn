@@ -44,3 +44,18 @@ function doAllTheMath(x, y) {
 const results = doAllTheMath(10, 5);
 console.log(doAllTheMath(10, 5).sum);
 console.log(results.difference);
+
+const human = {
+  name: "Biswaszin",
+  gender: "Cat",
+
+  introduceYourself() {
+    return `I'm ${this.name}! and I'm a ${gender}!`;
+  },
+};
+
+const { name, gender } = human;
+console.log(name);
+console.log(human.introduceYourself());
+const introductionHuman = human.introduceYourself.bind(human);
+console.log(introductionHuman());

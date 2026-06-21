@@ -1,6 +1,6 @@
 let board = "";
 
-let size = 8;
+let size = Number(prompt("Enter the grid:"));
 
 for (let y = 0; y < size; y++) {
   for (let x = 0; x < size; x++) {

@@ -14,12 +14,30 @@ const user = new User("Zin", 100);
 class Movie {
   #title;
   constructor(title, rating) {
-    this.#title = title;
+    this.#title = title; // Making sure the title is private.
     this.rating = rating;
+  }
+
+  // since, our title is a read only (cuz we cannot change it)
+  // to output it, we need a getter. so let's set it?
+  get titleCaps() {
+    const allCaps = this.#title.toUpperCase();
+    return allCaps;
+  }
+
+  // this upper method acts like a property. let's make a function now for the same thin
+  allTitleCaps() {
+    const allCaps = this.#title.toUpperCase();
+    return allCaps;
+  }
+
+  get title() {
+    return this.#title;
   }
 }
 
 const movie1 = new Movie("Cyberpunk", 9.8);
-console.log(movie1);
-movie1.rating = 9.2;
-console.log(movie1.rating);
+console.log(`Movie Name: ${movie1.title}, Rating: ${movie1.rating}`);
+console.log(movie1.titleCaps);
+console.log(movie1.allTitleCaps());
+console.log(movie1.title);

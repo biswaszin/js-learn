@@ -13,9 +13,12 @@ const user = new User("Zin", 100);
 
 class Movie {
   #title;
+
+  static movieCounter = 0;
   constructor(title, rating) {
     this.#title = title; // Making sure the title is private.
     this.rating = rating;
+    Movie.movieCounter++;
   }
 
   // since, our title is a read only (cuz we cannot change it)
@@ -34,10 +37,31 @@ class Movie {
   get title() {
     return this.#title;
   }
+
+  static getMovieCounter() {
+    return Movie.movieCounter;
+  }
 }
 
 const movie1 = new Movie("Cyberpunk", 9.8);
-console.log(`Movie Name: ${movie1.title}, Rating: ${movie1.rating}`);
-console.log(movie1.titleCaps);
-console.log(movie1.allTitleCaps());
+const movie2 = new Movie("Obsession", 9.9);
+
 console.log(movie1.title);
+console.log(movie2.title);
+console.log(`Movie Counter: ${Movie.getMovieCounter()}`);
+
+class Sender {
+  constructor(recipient) {
+    this.recipient = recipient;
+  }
+
+  formatMessage(message) {
+    return `To: ${this.recipient}, Message: ${message}`;
+  }
+}
+
+class SMSSender extends Sender {
+  formatMessage(message) {
+    return `${super.formatMessage(message)} [SMS]`;
+  }
+}
